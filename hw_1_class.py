@@ -63,9 +63,38 @@ print(bird_type_1.feed_animals())
 print(milk_animals_type_1.get_milk())
 print(wool_animals_type_1.get_wool())
 
-overall_weight_birds = bird_type_1.weight + bird_type_2.weight + bird_type_3.weight + bird_type_4.weight
-overall_weight_milk = milk_animals_type_1.weight + milk_animals_type_2.weight + milk_animals_type_3.weight
-overall_weight_wool = wool_animals_type_1.weight + wool_animals_type_1.weight
-overall_weight = overall_weight_birds + overall_weight_milk + overall_weight_wool
-print(f'Общий вес животных: {overall_weight} кг')
+#overall_weight_birds = bird_type_1.weight + bird_type_2.weight + bird_type_3.weight + bird_type_4.weight
+#overall_weight_milk = milk_animals_type_1.weight + milk_animals_type_2.weight + milk_animals_type_3.weight
+#overall_weight_wool = wool_animals_type_1.weight + wool_animals_type_1.weight
+#overall_weight = overall_weight_birds + overall_weight_milk + overall_weight_wool
+#print(f'Общий вес животных: {overall_weight} кг')
+
+overall_weight_dict = {}
+overall_weight_dict[bird_type_1.name] = bird_type_1.weight
+overall_weight_dict[bird_type_2.name] = bird_type_2.weight
+overall_weight_dict[bird_type_3.name] = bird_type_3.weight
+overall_weight_dict[bird_type_4.name] = bird_type_4.weight
+overall_weight_dict[milk_animals_type_1.name] = milk_animals_type_1.weight
+overall_weight_dict[milk_animals_type_2.name] = milk_animals_type_2.weight
+overall_weight_dict[milk_animals_type_3.name] = milk_animals_type_3.weight
+overall_weight_dict[milk_animals_type_3.name] = milk_animals_type_3.weight
+overall_weight_dict[wool_animals_type_1.name] = wool_animals_type_1.weight
+overall_weight_dict[wool_animals_type_2.name] = wool_animals_type_2.weight
+print(overall_weight_dict)
+
+total_weight = 0
+for animal_name, animal_weight in overall_weight_dict.items():
+    total_weight = total_weight + animal_weight
+print(f'Общий вес животных: {total_weight} кг')
+
+count = 0
+id = 0
+for animal_name, animal_weight in overall_weight_dict.items():
+    if count < animal_weight:
+        count = animal_weight
+        id = animal_name
+print(f'Максимальный вес у {id}: {count} кг')
+
+#print(max(overall_weight_dict, key=overall_weight_dict.get))
+
 
